@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "test": "yarn test",
-    "build": "tsc",
-    "prepublishOnly": "npm run build"
+    "build": "yarn tsc",
+    "prepublishOnly": "yarn build"
   },
   "author": "@Kaisa55275",
   "devDependencies": {

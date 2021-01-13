@@ -8,6 +8,10 @@
     "build": "yarn tsc",
     "prepublishOnly": "yarn build"
   },
+  "homepage": "https://github.com/Kaisa55275/next-sitemapper",
+  "repository": {
+    "url": "https://github.com/Kaisa55275/next-sitemapper"
+  },
   "author": "@Kaisa55275",
   "devDependencies": {
     "@types/node": "^14.14.20",

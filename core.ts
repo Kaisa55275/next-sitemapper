@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/ban-types */
-import fs from 'fs'
-import dayjs from 'dayjs'
-import path from 'path'
+import * as fs from 'fs'
+import * as dayjs from 'dayjs'
+import * as path from 'path'
 
 type PathMap = Record<string, Record<string, string>>
 

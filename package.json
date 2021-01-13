@@ -1,0 +1,17 @@
+{
+  "name": "@next/sitemapper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "yarn test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.14.20"
+  },
+  "dependencies": {
+    "dayjs": "^1.10.3"
+  }
+}

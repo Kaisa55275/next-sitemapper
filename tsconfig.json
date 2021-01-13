@@ -9,6 +9,7 @@
     "pretty": true,
     "newLine": "lf",
     "outDir": "dist",
-    "types": ["node"]
+    "types": ["node"],
+    "allowSyntheticDefaultImports": true
   }
 }

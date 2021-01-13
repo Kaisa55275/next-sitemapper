@@ -1,5 +1,5 @@
 import * as fs from 'fs'
-import * as dayjs from 'dayjs'
+import dayjs from 'dayjs'
 import * as path from 'path'
 
 type PathMap = Record<string, Record<string, string>>

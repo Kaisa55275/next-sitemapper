@@ -1,5 +1,4 @@
 import * as fs from 'fs'
-import dayjs from 'dayjs'
 import * as path from 'path'
 
 type PathMap = Record<string, Record<string, string>>
@@ -7,7 +6,6 @@ type PathMap = Record<string, Record<string, string>>
 export type SitemapConfig = Partial<
   Omit<SiteMapper, 'sitemapTag' | 'sitemapUrlSet'>
 >
-
 class SiteMapper {
   alternatesUrls: Record<string, string>
   baseUrl: string
@@ -70,6 +68,13 @@ class SiteMapper {
         this.nextConfig = this.nextConfig([], {})
       }
     }
+  }
+
+  formatDate(dt: Date)  {
+    var y = dt.getFullYear();
+    var m = ('00' + (dt.getMonth()+1)).slice(-2);
+    var d = ('00' + dt.getDate()).slice(-2);
+    return (y + '-' + m + '-' + d);
   }
 
   preLaunch() {
@@ -145,9 +150,10 @@ class SiteMapper {
       }
       const fileExtension = site.split('.').pop()
       if (this.isIgnoredExtension(fileExtension)) continue
+      const fe = fileExtension || []
       let fileNameWithoutExtension = site.substring(
         0,
-        site.length - ((fileExtension?.length || 0) + 1)
+        site.length - ((fe.length) + 1)
       )
       fileNameWithoutExtension =
         this.ignoreIndexFiles && fileNameWithoutExtension === 'index'
@@ -199,7 +205,7 @@ class SiteMapper {
   async sitemapMapper(dir: string) {
     const urls = await this.getSitemapURLs(dir)
     const filteredURLs = urls.filter((url) => !this.isIgnoredPath(url.pagePath))
-    const date = dayjs().format('YYYY-MM-DD')
+    const date = this.formatDate(new Date())
     filteredURLs.forEach((url) => {
       let alternates = ''
       let priority = ''

@@ -206,6 +206,7 @@ class SiteMapper {
     const urls = await this.getSitemapURLs(dir)
     const filteredURLs = urls.filter((url) => !this.isIgnoredPath(url.pagePath))
     const date = this.formatDate(new Date())
+    let num = 0
     filteredURLs.forEach((url) => {
       let alternates = ''
       let priority = ''
@@ -232,7 +233,10 @@ class SiteMapper {
           flag: 'as'
         }
       )
+      num += 1
     })
+
+    console.log('generated' + num + 'paths')
   }
 }
 export default SiteMapper

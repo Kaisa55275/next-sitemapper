@@ -236,7 +236,7 @@ class SiteMapper {
       num += 1
     })
 
-    console.log('generated' + num + 'paths')
+    console.log('Generated ' + num + ' paths!')
   }
 }
 export default SiteMapper
